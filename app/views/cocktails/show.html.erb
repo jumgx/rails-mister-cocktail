@@ -1,14 +1,25 @@
-<h1><%= @cocktail.name %></h1>
-<% if @cocktail.photo.attached? %>
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<%
+  if @cocktail.photo.attached?
+    url = cl_image_path @cocktail.photo.key, height: 300, width: 500, crop: :fill
+  else
+    url = "https://blog.ubaldi.com/wp-content/uploads/2019/05/cocktails-blender-1240x503.jpg"
+  end
+%>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= url %>);">
+  <div class="container">
+    <h1><strong> <%= @cocktail.name %></strong>!</h1>
+    <p>Follow our tips or give us your recipe</p>
+    <%= link_to "+ Add an Ingredient", new_cocktail_dose_path(@cocktail), class: "btn-ghost" %>
+  </div>
+</div>
 
 <h2>Ingredients</h2>
 
 <ul class="list-group">
   <% @cocktail.doses.each do |dose| %>
     <li class="list-group-item"><%= dose.description %> - <%= dose.ingredient.name %>
-      <%= link_to "Remove",
+      <%= link_to " X ",
                   dose_path(dose),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>

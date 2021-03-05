@@ -25,8 +25,9 @@
 # end
 
 # put Ingredient.count
+Dose.delete_all
 Ingredient.delete_all
-Ingredient.create(name: "lemon")
+Ingredient.create(name: "tranche")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint")
 Ingredient.create(name: "2cl")

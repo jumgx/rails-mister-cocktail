@@ -2,11 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  padding-top: 32px;
 }
 
 .card-category{
   color: white;
   list-style-type: none;
+  padding: 16px 16px;
+  height: 300px;
 }
 
 .card-category li{
