@@ -1,9 +1,18 @@
 
-<h1>Cocktails Home ^^ </h1>
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/11/23/14/49/alcohol-1853327_960_720.jpg);>
+  <div class="container">
+    <h1><strong> Cocktails</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your covid life, make cocktails</p>
+    <%= link_to "+ Add a cocktail", new_cocktail_path, class: "btn-ghost" %>
+  </div>
+</div>
 
-<%= link_to "+ Add a cocktail", new_cocktail_path %>
+<div>
+  <ul class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)"><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <% end %>
+  </ul>
+
+</div>
+
