@@ -1,8 +1,15 @@
-<h1>Add a new dose </h1>
-<p>please, add a new dose, ingredient/description pair</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.radiofrance.fr/s3/cruiser-production/2018/09/b378089b-2686-4ebc-96c2-16a64178864e/838_gettyimages-827639526.webp);">
+  <div class="container">
+    <h1><strong> Add a new dose for your cocktail</strong>!</h1>
+    <p>ingredient/description pair</p>
+    <%= link_to "Go back HOME", root_path, class: "btn-ghost" %>
+  </div>
+</div>
 
+<div class="container">
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+</div>
