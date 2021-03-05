@@ -25,14 +25,14 @@
 # end
 
 # put Ingredient.count
-
+Ingredient.delete_all
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "coca-cola")
-Ingredient.create(name: "Prosecco")
-Ingredient.create(name: "Aperol")
-
-Cocktail.create(name: "Spritz")
-Cocktail.create(name: "Monaco")
-Cocktail.create(name: "Rhum coca")
+Ingredient.create(name: "mint")
+Ingredient.create(name: "2cl")
+Ingredient.create(name: "10cl")
+Ingredient.create(name: "15cl")
+Cocktail.delete_all
+# Cocktail.create(name: "Spritz")
+# Cocktail.create(name: "Monaco")
+# Cocktail.create(name: "Rhum coca")
