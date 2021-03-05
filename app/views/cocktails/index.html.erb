@@ -12,7 +12,14 @@
 <div>
   <ul class="cards">
     <% @cocktails.each do |cocktail| %>
-      <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 300, width: 500, crop: :fill %>)"><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+      <%
+        if cocktail.photo.attached?
+          url = cl_image_path cocktail.photo.key, height: 300, width: 500, crop: :fill
+        else
+          url = "https://blog.ubaldi.com/wp-content/uploads/2019/05/cocktails-blender-1240x503.jpg"
+        end
+      %>
+      <li class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= url %>)"><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
     <% end %>
   </ul>
 
