@@ -25,15 +25,15 @@
 # end
 
 # put Ingredient.count
-Dose.delete_all
-Ingredient.delete_all
+# Dose.delete_all
+# Ingredient.delete_all
 Ingredient.create(name: "tranche")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint")
 Ingredient.create(name: "2cl")
 Ingredient.create(name: "10cl")
 Ingredient.create(name: "15cl")
-Cocktail.delete_all
+# Cocktail.delete_all
 # Cocktail.create(name: "Spritz")
 # Cocktail.create(name: "Monaco")
 # Cocktail.create(name: "Rhum coca")
